@@ -1,19 +1,35 @@
+//Import the express module
+import { name } from 'ejs';
 import express from 'express';
 
+//Create an instance of an
+//express application
 const app = express();
 
-const PORT = 3007; // Choose an available port number
+//Define a port number for
+//our server to listen on
+const PORT = 3007;
 
+//Create an array to store orders
+const orders = [];
 
-app.set('view engine', 'ejs');
-
+//Enable static file serving
 app.use(express.static('public'));
 
+//Add "middleware" to allow the app to parse form data
+//Access form data through req.body
+//app.use(express.urlencoded({ extended: true }));
+
+// Set view engine to EJS
+app.set('view engine', 'ejs');
+
+//Define a default route ("/")
 app.get('/', (req, res) => {
-
-  res.render('home');
-
+    res.render('home', {name: 'Donald Duck'});
 });
 
-
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+//Start the server on the desginated port
+app.listen(PORT, () => {
+    console.log(`Server is running at
+        http://localhost:${PORT}`);
+});
