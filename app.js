@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 
 //Define a default route ("/")
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {name: 'Donald Duck', occupation: 'Navy', favoriteColor: 'White'});
 });
 
 //Start the server on the desginated port
