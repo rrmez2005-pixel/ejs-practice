@@ -28,6 +28,18 @@ app.get('/', (req, res) => {
     res.render('home', {person});
 });
 
+app.get('/friends', (req, res) => {
+    const friends = [ 'Mickey', 'Goofy', 'Minnie', 'Daisy' ];
+    res.render('friends', { friends });
+
+});
+
+app.get('/movies', (req, res) => {
+    const movies = [ 'Minions', 'Despicable me', 'Polar express'];
+    res.render('movies', { movies });
+
+});
+
 //Start the server on the desginated port
 app.listen(PORT, () => {
     console.log(`Server is running at
