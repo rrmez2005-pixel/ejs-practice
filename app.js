@@ -1,5 +1,4 @@
 //Import the express module
-import { name } from 'ejs';
 import express from 'express';
 
 //Create an instance of an
@@ -25,7 +24,7 @@ app.set('view engine', 'ejs');
 
 //Define a default route ("/")
 app.get('/', (req, res) => {
-    res.render('home', {name: 'Donald Duck'});
+    res.render('home', {name: 'Donald Duck', occupation: 'Navy', favoriteColor: 'White'});
 });
 
 //Start the server on the desginated port
