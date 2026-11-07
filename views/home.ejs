@@ -7,8 +7,17 @@
 </head>
 <body>
     <h1>EJS Practice</h1>
-    <h2>hello, <%= name %></h2>
-    <h3>Occupation: <%= occupation %></h3>
-    <p>favoriteColor: <%= favoriteColor %></p>
+    <h2>Hello, <%= person.name %></h2>
+    <h3>Occupation: <%= person.occupation %></h3>
+    <p>FavoriteColor: <%= person.favoriteColor %></p>
+
+    <!-- Part III: Occupation decision -->
+    <% if (person.favoriteColor.toLowerCase() === 'blue') { %>
+        <p>Blue is a cool color!</p>
+    <% } else if (person.favoriteColor.toLowerCase() === 'red') { %>
+        <p>Red is a mean color!</p>
+    <% } else { %>
+        <p>That's a nice color!</p>
+    <% } %>
 </body>
 </html>
